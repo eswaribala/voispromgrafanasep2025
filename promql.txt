@@ -238,6 +238,19 @@ sum(rate(http_request_duration_seconds_bucket{le="1"}[5m]))
 sum(rate(http_request_duration_seconds_count[5m]))
 
 ==================================================================
+Summary Query
+
+Average latency:
+
+rate(http_request_duration_seconds_sum[5m])
+/
+rate(http_request_duration_seconds_count[5m])
+
+
+Total requests per second:
+
+rate(http_request_duration_seconds_count[5m])
+===========================================
 12. Advanced Queries
 predict_linear(node_cpu_seconds_total[5m], 3600) – Predict CPU usage in the next hour.
 stddev_over_time(node_load1[1h]) – Standard deviation of system load.
