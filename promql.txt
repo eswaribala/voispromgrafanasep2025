@@ -16,6 +16,29 @@ Using an expression like some[6h] shows metrics from the last six hours for the 
 
 http_total_requests{job="Prometheus", method="post", code="404"} [5m]
 ==============================================
+Rate Queries
+HTTP requests per second (last 5 minutes)
+
+rate(http_requests_total[5m])
+
+
+Requests per second by status code
+
+rate(http_requests_total[5m]) by (status)
+
+
+Network received bytes per second (node exporter)
+
+rate(node_network_receive_bytes_total[1m]) by (device)
+
+
+Error rate percentage
+
+100 * (rate(http_requests_total{status=~"5.."}[5m])
+      /
+       rate(http_requests_total[5m]))
+
+===========================================
 Range Vectors
 A duration to cover the length of that range goes at the end of the vector. For example, this gives metrics for the previous two minutes:
 
