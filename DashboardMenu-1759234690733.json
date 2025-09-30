@@ -1,0 +1,65 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 9,
+  "links": [],
+  "panels": [
+    {
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 18,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "\n\n<h1>VOIS Menu</h1>\n<div class=\"row equal\">\n<div class=\"box\" style=\"background-color:red;width:25%;height:100px;color:white\">\n<a href=\"#\">Customer Dashbord\n\n</a>\n</div>\n<div class=\"box\" style=\"background-color:green;width:25%;height:100px;color:white\">\n<a href=\"http://localhost:3000/goto/PjIpRA3Ng?orgId=1\">Customer API Dashbord\n\n</a>\n</div>\n</div>\n<div class=\"row equal\">\n<div class=\"box\" style=\"background-color:blue;width:25%;height:100px;color:white\">\n<a href=\"#\">JSON API Dashbord\n\n</a>\n</div>\n<div class=\"box\" style=\"background-color:yellow;width:25%;height:100px;color:white\">\n<a href=\"#\">Postgres Dashbord\n\n</a>\n</div>\n</div>\n",
+        "mode": "html"
+      },
+      "pluginVersion": "12.1.1",
+      "title": "VOIS Home Page",
+      "type": "text"
+    }
+  ],
+  "preload": false,
+  "schemaVersion": 41,
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "DashboardMenu",
+  "uid": "fc17d4b5-19d6-49d8-85fa-45477c46de37",
+  "version": 4
+}
