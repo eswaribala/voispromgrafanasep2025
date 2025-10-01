@@ -191,7 +191,7 @@ change all the 9100 to 9101
          'match[]':
            - '{__name__=~".+"}'  # Match all metrics, adjust as necessary
         static_configs:
-          - targets: ['host.docker.internal:9080','host.docker.internal:9070']
+          - targets: ['host.docker.internal:9096','host.docker.internal:9098']
 
 #aggregated alerting rules
 - alert: JobRequestRateSum
