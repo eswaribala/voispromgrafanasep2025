@@ -1,14 +1,14 @@
         - alert: LowAvailableMemory
-                   expr: node_memory_MemAvailable_bytes{job="node_exporter"} / node_memory_MemTotal_bytes{job="node_exporter"} * 100 >50
-                   for: 2m
-                   labels:
-                     severity: critical
-                     inhibit: "true"
-                   annotations:
-                     summary: "Low memory available on {{ $labels.instance }}"
-                     description: "Available memory on instance {{ $labels.instance }} is above 50% for more than 2 minutes."
+           expr: node_memory_MemAvailable_bytes{job="node_exporter"} / node_memory_MemTotal_bytes{job="node_exporter"} * 100 >50
+           for: 2m
+           labels:
+             severity: critical
+             inhibit: "true"
+           annotations:
+             summary: "Low memory available on {{ $labels.instance }}"
+             description: "Available memory on instance {{ $labels.instance }} is above 50% for more than 2 minutes."        
 
-        - alert: HighMemoryUsage
+         - alert: HighMemoryUsage
            expr: node_memory_MemAvailable_bytes{job="node_exporter"} / node_memory_MemTotal_bytes{job="node_exporter"} * 100 >25
            for: 2m
            labels:
