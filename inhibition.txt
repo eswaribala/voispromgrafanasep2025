@@ -17,3 +17,13 @@
            annotations:
              summary: "High Memory Usage {{ $labels.instance }}"
              description: "High Memory Usage for {{ $labels.instance }} is above 25% for more than 2 minutes."
+==================================================
+Alert manager
+inhibit_rules:
+    - source_matchers:
+       #- alertname = LowAvailableMemory
+       - inhibit="true"
+      target_matchers:
+       #- alertname = HighMemoryUsage
+       - inhibited="true" 
+      equal: ['instance', 'job']
