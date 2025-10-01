@@ -1,4 +1,4 @@
-        - alert: LowAvailableMemory
+        - alert: HighMemoryUsage
            expr: node_memory_MemAvailable_bytes{job="node_exporter"} / node_memory_MemTotal_bytes{job="node_exporter"} * 100 >50
            for: 2m
            labels:
@@ -8,7 +8,7 @@
              summary: "Low memory available on {{ $labels.instance }}"
              description: "Available memory on instance {{ $labels.instance }} is above 50% for more than 2 minutes."        
 
-         - alert: HighMemoryUsage
+         - alert: LowMemoryUsage
            expr: node_memory_MemAvailable_bytes{job="node_exporter"} / node_memory_MemTotal_bytes{job="node_exporter"} * 100 >25
            for: 2m
            labels:
@@ -21,9 +21,9 @@
 Alert manager
 inhibit_rules:
     - source_matchers:
-       #- alertname = LowAvailableMemory
+       #- alertname = HighMemoryUsage
        - inhibit="true"
       target_matchers:
-       #- alertname = HighMemoryUsage
+       #- alertname = LowMemoryUsage
        - inhibited="true" 
       equal: ['instance', 'job']
