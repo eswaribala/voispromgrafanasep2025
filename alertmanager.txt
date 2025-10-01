@@ -29,7 +29,12 @@ alertmanager:
           group_wait: 10s
           group_interval: 1m
           repeat_interval: 30m
-
+        - match:
+            severity: warning
+          receiver: 'web-hook'
+          group_wait: 10s
+          group_interval: 1m
+          repeat_interval: 30m 
 
    receivers:
       - name: 'email-alerts'
